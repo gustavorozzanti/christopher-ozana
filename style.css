@@ -101,3 +101,9 @@ footer small{display:block;max-width:70ch;margin:auto;font-size:.7rem}
  .stats{grid-template-columns:1fr 1fr}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+
+.ficha{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px}
+.ficha div{background:var(--asfalto);color:#fff;padding:14px;text-align:center;border-bottom:5px solid var(--amarelo)}
+.ficha small{display:block;font-size:.7rem;text-transform:uppercase;opacity:.7}
+.ficha b{font-family:"Anton";font-weight:400;font-size:1.5rem;color:var(--amarelo)}
+@media(max-width:800px){.ficha{grid-template-columns:1fr 1fr}}
