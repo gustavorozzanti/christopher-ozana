@@ -107,3 +107,23 @@ footer small{display:block;max-width:70ch;margin:auto;font-size:.7rem}
 .ficha small{display:block;font-size:.7rem;text-transform:uppercase;opacity:.7}
 .ficha b{font-family:"Anton";font-weight:400;font-size:1.5rem;color:var(--amarelo)}
 @media(max-width:800px){.ficha{grid-template-columns:1fr 1fr}}
+
+.club-hero{background:var(--asfalto);color:#fff;padding:56px 16px 44px;text-align:center;border-bottom:6px solid var(--amarelo)}
+.club-hero h1{font-size:clamp(2.6rem,9vw,6rem);line-height:1}
+.club-hero .per{color:var(--amarelo);font-size:1.6rem;transform:rotate(-2deg);margin:6px 0 14px}
+.club-hero .lead2{margin:auto;max-width:60ch}
+.stats.lite{margin-bottom:28px;grid-template-columns:repeat(auto-fit,minmax(140px,1fr))}
+.stats.lite div{background:var(--asfalto)}
+.blocos{display:grid;gap:16px;margin-bottom:32px}
+.blocos article{background:#fff;border:3px solid #000;border-left:12px solid var(--amarelo);padding:16px 18px}
+.blocos h3{font-size:1.4rem;margin-bottom:6px}
+.sec h2.sub{font-size:2rem;margin:34px 0 18px}
+.tbl{overflow-x:auto}
+.tbl table{width:100%;border-collapse:collapse;background:#fff;border:3px solid #000}
+.tbl th{background:#000;color:var(--amarelo);text-align:left;padding:8px;font-size:.8rem;text-transform:uppercase}
+.tbl td{padding:8px;border-top:2px solid #000;font-size:.85rem}
+.pn{display:flex;justify-content:space-between;gap:10px;margin-top:40px;flex-wrap:wrap}
+.pn a{font-family:Anton;text-transform:uppercase;background:#000;color:var(--amarelo);padding:10px 16px;text-decoration:none}
+.fontes a{text-decoration:underline}
+.clubs li a{text-decoration:none;color:inherit;display:flex;flex-direction:column}
+.clubs li:hover{background:var(--amarelo)}
