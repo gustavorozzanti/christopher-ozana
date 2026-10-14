@@ -46,13 +46,17 @@ const clubs = [
   blocos:[['Sub-17','Passagem registrada no ogol e citada pela imprensa. Não há números de jogos disponíveis.']],
   fontes:[['ogol',OGOL]] },
 ];
-const head = (t,d)=>`<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${t} | Christopher "El Tanque"</title><meta name="description" content="${d}"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Anton&family=Permanent+Marker&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="../style.css"></head><body>
+const IMG = CDN + 'jogadores/1785713782309-5dec1a4c38c7.webp';
+const BASE = 'https://gustavorozzanti.github.io/christopher-ozana/';
+const FAV = `<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 fill=%27%23141414%27/%3E%3Ctext x=%2750%27 y=%2772%27 font-size=%2770%27 font-weight=%27900%27 text-anchor=%27middle%27 fill=%27%23ffd400%27 font-family=%27Impact,sans-serif%27%3ET%3C/text%3E%3C/svg%3E">`;
+const meta = (t,d,u)=>`<meta name="theme-color" content="#141414"><meta property="og:type" content="website"><meta property="og:locale" content="pt_BR"><meta property="og:site_name" content="Christopher El Tanque"><meta property="og:title" content="${t} | Christopher El Tanque"><meta property="og:description" content="${d}"><meta property="og:url" content="${u}"><meta property="og:image" content="${IMG}"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${t} | Christopher El Tanque"><meta name="twitter:description" content="${d}"><meta name="twitter:image" content="${IMG}">${FAV}`;
+const head = (t,d,u)=>`<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${t} | Christopher "El Tanque"</title><meta name="description" content="${d}">${meta(t,d,u)}<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Anton&family=Permanent+Marker&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="../style.css"></head><body>
 <header class="nav"><a href="../index.html" class="logo">EL TANQUE<span>#VZP</span></a><nav><a href="../index.html#clubes">← Todos os clubes</a></nav></header><main>`;
 const foot = `</main><footer><p class="marker">Da quebrada pro gol. O gol é de todo mundo.</p><small>Site não oficial. Dados do ogol, do arquivo do Paulista FC e da imprensa local.</small></footer></body></html>`;
 fs.mkdirSync('clubes',{recursive:true});
 clubs.forEach((c,i)=>{
  const prev=clubs[(i+clubs.length-1)%clubs.length], next=clubs[(i+1)%clubs.length];
- let h = head(c.nome,c.resumo);
+ let h = head(c.nome,c.resumo,BASE+'clubes/'+c.slug+'.html');
  h+=`<section class="club-hero"><p class="tag">${c.sub}</p><h1>${c.nome}</h1><p class="marker per">${c.periodo}</p><p class="lead2">${c.resumo}</p></section>`;
  h+=`<section class="sec"><div class="stats lite">${c.stats.map(s=>`<div><strong>${s[0]}</strong><span>${s[1]}</span></div>`).join('')}</div>`;
  h+=`<div class="blocos">${c.blocos.map(b=>`<article><h3>${b[0]}</h3><p>${b[1]}</p></article>`).join('')}</div>`;
