@@ -127,3 +127,9 @@ footer small{display:block;max-width:70ch;margin:auto;font-size:.7rem}
 .fontes a{text-decoration:underline}
 .clubs li a{text-decoration:none;color:inherit;display:flex;flex-direction:column}
 .clubs li:hover{background:var(--amarelo)}
+
+.videos{display:flex;flex-wrap:nowrap;overflow-x:auto;gap:20px;padding:0 6px 18px 0;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.videos figure{flex:0 0 240px;scroll-snap-align:start}
+.videos::-webkit-scrollbar{height:10px}
+.videos::-webkit-scrollbar-thumb{background:var(--amarelo);border:2px solid #000}
+.videos::-webkit-scrollbar-track{background:#000}
